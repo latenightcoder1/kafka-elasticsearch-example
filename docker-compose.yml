@@ -17,3 +17,13 @@ services:
       KAFKA_LISTENER_NAME: OUTSIDE
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+  elasticsearch:
+    image: elasticsearch:8.9.0
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.http.ssl.enabled=false
+      - xpack.security.enabled=true
+      - ELASTIC_PASSWORD=elastic

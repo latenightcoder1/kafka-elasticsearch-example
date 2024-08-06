@@ -14,7 +14,6 @@ docker compose -f
 /Users/surajkumar/Documents/personal_workspace/kafka-elasticsearch-example/docker-compose.yml up -d
 
 Remaining Items-
-a) elastic search part of docker compose with elastic password set
-b) custom object deserialization while receiving from kafka and writing to elasticsearch
-c) elasticsearchclient with searchRequest
+a) custom object deserialization while receiving from kafka and writing to elasticsearch
+b) elasticsearchclient with searchRequest
 
