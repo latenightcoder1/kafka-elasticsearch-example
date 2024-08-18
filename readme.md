@@ -15,5 +15,8 @@ docker compose -f
 
 Remaining Items-
 a) custom object deserialization while receiving from kafka and writing to elasticsearch
-b) elasticsearchclient with searchRequest
 
+to get into kafka container to see written messages
+
+docker exec -it kafka-elasticsearch-example-kafka-1 kafka-console-consumer.sh --bootstrap-server
+localhost:9092 --topic my_topic3 --from-beginning

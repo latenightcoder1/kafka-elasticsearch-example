@@ -1,8 +1,9 @@
 package org.example.service;
 
+import java.util.List;
 import org.example.model.MessageDetails;
 
 public interface MessageService {
 
-    MessageDetails sendMessage(MessageDetails message);
+    List<MessageDetails> sendMessage(List<MessageDetails> messages);
 }

@@ -1,14 +1,16 @@
 package org.example.validator;
 
 import java.util.ArrayList;
+import java.util.List;
 import org.example.exception.InvalidRequestException;
 import org.example.model.DocumentSearchRequest;
 import org.example.model.Pagination;
+import org.example.model.Sorting;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EventDocumentQueryRequestValidator {
-    
+
     private Integer validateAndSanitizeInteger(Integer value, String parameterName,
         Integer defaultValue) {
         if (value == null) {
@@ -38,7 +40,7 @@ public class EventDocumentQueryRequestValidator {
             documentSearchRequest.setSearchElements(new ArrayList<>());
         }
         if (documentSearchRequest.getSortings() == null) {
-            documentSearchRequest.setSortings(new ArrayList<>());
+            documentSearchRequest.setSortings(List.of(new Sorting("createdTime", "desc")));
         }
         if (documentSearchRequest.getRanges() == null) {
             documentSearchRequest.setRanges(new ArrayList<>());

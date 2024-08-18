@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.example.model.MessageDetails;
 import org.example.service.MessageService;
@@ -20,9 +21,9 @@ public class MessageController {
     }
 
     @PostMapping
-    public MessageDetails sendMessage(@RequestBody final MessageDetails message) {
-        log.info("Request Received to ingest : {}", message);
-        return messageService.sendMessage(message);
+    public List<MessageDetails> sendMessages(@RequestBody final List<MessageDetails> messages) {
+        log.info("Request Received to ingest : {}", messages);
+        return messageService.sendMessage(messages);
     }
 }
 
